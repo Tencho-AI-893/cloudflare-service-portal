@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TENCHO AI 組織図</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .wrapper {
+      width: min(100%, 900px);
+      border-radius: 32px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+      padding: 2rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin: 0 0 1rem;
+      text-align: center;
+      color: #7dd3fc;
+    }
+    p {
+      margin: 0 0 2rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+    .node {
+      border-radius: 24px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+    .node strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+      color: #e2e8f0;
+    }
+    .node span {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .flow {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: #38bdf8;
+      line-height: 1;
+    }
+    .bottom-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .bottom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>TENCHO AI 組織図</h1>
+    <p>店長の最終判断から、設計・実装・編集・公開までのフローを静的HTMLで表現しています。</p>
+
+    <div class="flow">
+      <div class="node">
+        <strong>店長</strong>
+        <span>意思決定・最終判断</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="node">
+        <strong>Claude Code</strong>
+        <span>監督・設計・計画</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="node">
+        <strong>DeepSeek</strong>
+        <span>仕様書・設計図<br>実装職人・コード生成</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="node">
+        <strong>Ollama</strong>
+        <span>page.tsx / components / functions のローカル推論</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="node">
+        <strong>VS Code / Continue</strong>
+        <span>編集・適用</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="node">
+        <strong>GitHub</strong>
+        <span>保存・履歴管理</span>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div class="node">
+        <strong>localhost:3002</strong>
+        <span>ローカル確認</span>
+      </div>
+      <div class="node">
+        <strong>Cloudflare Pages</strong>
+        <span>公開・検証</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
