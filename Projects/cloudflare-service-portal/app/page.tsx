@@ -1,19 +1,7 @@
-import type { Metadata } from "next";
-import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "TENCHO AI Service Portal",
-  description: "AI導入・業務自動化サービス",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Home() {
   return (
-    <html lang="ja">
-      <body>{children}</body>
-    </html>
+    <main className="min-h-screen bg-slate-950 text-white">
+      <h1>AIで業務を自動化する</h1>
+    </main>
   );
 }
